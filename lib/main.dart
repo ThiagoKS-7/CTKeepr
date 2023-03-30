@@ -94,16 +94,38 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         body: SafeArea(
           child: Container(
-              margin: EdgeInsets.only(top: 30),
-              child: ListView.builder(
-                  itemCount: items.length,
-                  itemBuilder: (context, index) {
-                    ListItem item = items[index];
-                    return ListTile(
-                      title: item.buildTitle(context),
-                      subtitle: item.buildSubtitle(context),
-                    );
-                  })),
+            margin: EdgeInsets.only(top: 30),
+            child: ListView.builder(
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                ListItem item = items[index];
+                int img = index + 10;
+                return index != 0
+                    ? Card(
+                        child: ListTile(
+                          leading: index != 0
+                              ? Image(
+                                  image: NetworkImage(
+                                      'https://picsum.photos/250?image=$img'),
+                                )
+                              : null,
+                          title: item.buildTitle(context),
+                          subtitle: item.buildSubtitle(context),
+                        ),
+                      )
+                    : ListTile(
+                        leading: index != 0
+                            ? Image(
+                                image: NetworkImage(
+                                    'https://picsum.photos/250?image=$img'),
+                              )
+                            : null,
+                        title: item.buildTitle(context),
+                        subtitle: item.buildSubtitle(context),
+                      );
+              },
+            ),
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () => Navigator.pushNamed(context, '/second'),
