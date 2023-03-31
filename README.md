@@ -1,6 +1,6 @@
-# Flutter Gov
+# E-MUinf 
 
-A new Flutter project created with https://flutlab.io
+An mobile Maintenance of Urban Infrastructure helper, created with https://flutlab.io
 
 ## Getting Started
 
