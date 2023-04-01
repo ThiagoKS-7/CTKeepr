@@ -86,9 +86,9 @@ class MainPage extends StatelessWidget {
                                   begin: Alignment.topRight,
                                   end: Alignment(0.8, 1),
                                   colors: [
+                                    Color(0xff43210c),
                                     Colors.red,
-                                    Colors.orange,
-                                    Colors.yellow,
+                                    Color(0xffdb5046),
                                   ]),
                             ),
                             child: Material(
@@ -96,15 +96,27 @@ class MainPage extends StatelessWidget {
                               child: InkWell(
                                 onTap: () =>
                                     {Navigator.pushNamed(context, '/create')},
-                                child: Container(
-                                  padding: EdgeInsets.only(left: 10, top: 50),
-                                  child: Text(
-                                    "Novo Relatório",
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                        fontSize: 15),
-                                  ),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.only(bottom: 10),
+                                      child: Icon(
+                                        Icons.add,
+                                        size: 35,
+                                        color: Color(0xfffdfd16),
+                                      ),
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.only(left: 10),
+                                      child: Text(
+                                        "Novo Relatório",
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                            fontSize: 15),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -113,6 +125,28 @@ class MainPage extends StatelessWidget {
                       ),
                     ],
                   )),
+              Container(
+                margin: EdgeInsets.only(bottom: 30),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 230,
+                      margin: EdgeInsets.only(left: 30),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: 'Pesquisar relatório',
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 30),
+                      child: IconButton(
+                          onPressed: () => {}, icon: const Icon(Icons.search)),
+                    )
+                  ],
+                ),
+              ),
               SingleChildScrollView(
                 child: ClipRRect(
                   borderRadius: BorderRadius.only(
@@ -121,7 +155,7 @@ class MainPage extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.only(top: 20, left: 20),
                     color: Color(0xffe8ebeb),
-                    height: 80,
+                    height: 320,
                     child: ListView.builder(
                       shrinkWrap: true,
                       itemCount: 6,
