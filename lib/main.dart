@@ -32,29 +32,66 @@ class MainPage extends StatelessWidget {
   final ScrollController _scroll = ScrollController();
   @override
   Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(title: Text("CT Keepr - Home"), actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.add),
+            tooltip: 'Novo Relatório',
+            onPressed: () {
+              Navigator.pushNamed(context, '/second');
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.add),
+            tooltip: 'Novo Relatório',
+            onPressed: () {
+              Navigator.pushNamed(context, '/second');
+            },
+          ),
+        ]),
         body: SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text('Teste'),
+              Container(height: 200, child: Text('Teste')),
               SingleChildScrollView(
                 child: Container(
-                  height: 300,
+                  padding: EdgeInsets.only(top: 20, left: 20),
+                  color: Colors.cyan[900],
+                  height: 380,
                   child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: 6,
                     itemBuilder: (context, index) {
                       int img = index + 10;
-                      return InkWell(
-                        onTap: () => {},
-                        child: ListTile(
-                          leading: Image(
-                            image: NetworkImage(
-                                'https://picsum.photos/250?image=$img'),
-                          ),
-                          title: Text('Relatório $index'),
-                          subtitle: Text('Descrição $index, dd/mm/yyy'),
+                      return Container(
+                        margin: EdgeInsets.only(bottom: 10),
+                        child: Material(
+                          color: Colors.cyan[900],
+                          child: InkWell(
+                              onTap: () => {},
+                              child: Row(
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    // Image border
+                                    child: Image(
+                                      image: NetworkImage(
+                                        'https://picsum.photos/100/90?image=$img',
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(left: 60),
+                                    child: Column(
+                                      children: [
+                                        Text('Relatório $index'),
+                                        Text('Descrição $index, dd/mm/yyy')
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              )),
                         ),
                       );
                     },
@@ -63,11 +100,6 @@ class MainPage extends StatelessWidget {
               ),
             ],
           ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => Navigator.pushNamed(context, '/second'),
-          child: Icon(Icons.add),
-          tooltip: "Novo Relatório",
         ),
       );
 }
