@@ -2,6 +2,11 @@
 
 A mobile Maintenance of Urban Infrastructure helper, created with https://flutlab.io
 
+<div align="center">
+<img src="https://user-images.githubusercontent.com/83460816/229561126-ce8092d2-252a-4f6e-9c0e-45363ed322b4.png" />
+<img src="https://user-images.githubusercontent.com/83460816/229561171-d455e2fb-3c99-442b-a94c-d55ddb6e8a16.png" />
+</div>
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
