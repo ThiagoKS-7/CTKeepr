@@ -1,6 +1,6 @@
 # CTKeepr - Maintenance of Urban Infrastructure Facilitator
 
-An mobile Maintenance of Urban Infrastructure helper, created with https://flutlab.io
+A mobile Maintenance of Urban Infrastructure helper, created with https://flutlab.io
 
 ## Getting Started
 
